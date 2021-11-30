@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="./images/logo-white.png"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>LINKBASE</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header-content">
+          <div class="brand-logo">
+            <img src="./images/logo-white.png" alt="weiB" />
+          </div>
+          <div class="brand-name">LINKBASE</div>
+        </div>
+      </header>
+
+      <section class="hero-section">
+        <h1 class="drop-in">One link to share your Universe!</h1>
+        <div class="hero-flex">
+          <div class="hero-text drop-in-2">
+            <h3>
+              Linkbas is the most effective way to share content with your
+              network.
+            </h3>
+            <!-- <p>
+              Linkbas is the most effective way to share content with your
+              network.
+            </p> -->
+            <p>Create your own Linkbase</p>
+            <form
+              method="post"
+              autocomplete="off"
+              name="submit-to-google-sheet"
+            >
+              <div class="form-control">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Enter your email address"
+                />
+              </div>
+              <!-- <div class="form-control">
+                <textarea
+                  name="feedback"
+                  id="feedback"
+                  placeholder="Give us your valuable Feedback"
+                ></textarea>
+              </div> -->
+              <div class="form-control">
+                <input type="submit" value="Submit" />
+              </div>
+            </form>
+
+            <div class="feedback-text">
+              <p>We are only at the beginning and welcome your feedback</p>
+              <a
+                href="https://forms.gle/VmEYGPBtffGMC3Ub8"
+                target="_blank"
+                class="feedback-btn"
+                >Feedback</a
+              >
+            </div>
+          </div>
+          <div class="hero-image drop-in-2">
+            <img src="./images/Linkbase pure.png" alt="Placeholder Phone" />
+          </div>
+        </div>
+      </section>
+
+      <section class="linkbase-section drop-in-2">
+        <button onclick="goBack()" class="linkbase-btn">
+          Back to Linkbase
+        </button>
+      </section>
+    </div>
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbxATUiWsaUNk8J-R0qwbvQFZQ7Bp4JtwTirohDWPdD7MWq0sQXGEcXSiRQ04n3g4KLK/exec";
+      const form = document.forms["submit-to-google-sheet"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then(
+            (response) =>
+              (document.getElementById("email").value =
+                "Thanks for Contacting us..!")
+          )
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+  </body>
+</html>
