@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
 @font-face {
-  font-family: "Agency FB";
-  src: url("../fonts/agency-fb_[allfont.net].ttf");
+  font-family: 'Agency FB';
+  src: url('../fonts/agency-fb_[allfont.net].ttf');
 }
 * {
   box-sizing: border-box;
@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.5;
@@ -54,7 +54,7 @@ body {
 }
 
 .header .brand-name {
-  font-family: "Agency FB", arial;
+  font-family: 'Agency FB', arial;
   font-size: 4rem;
   line-height: 4.8rem;
   letter-spacing: 0.65rem;
@@ -68,53 +68,60 @@ body {
   color: #fafafa;
 }
 
-.hero-section h1 {
-  font-size: 6rem;
-  width: 75%;
-  margin: 0 auto;
-  line-height: 6.5rem;
+.hero-section h2 {
+  font-family: 'Agency FB', arial;
+  font-size: 3rem;
+  font-weight: normal;
   text-align: center;
 }
+
+/* Main-Flex */
 
 .hero-section .hero-flex {
   display: flex;
   justify-content: center;
   gap: 4rem;
-  padding-top: 2rem;
+  padding-top: 5rem;
 }
 
 .hero-section .hero-flex .hero-text {
   width: 50%;
-  padding-top: 2.5rem;
+}
+
+.hero-text h4 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.journey-heading > span {
+  display: block;
 }
 
 .hero-text h3 {
-  font-size: 3.2rem;
-  line-height: 4rem;
-  padding-bottom: 1.5rem;
-}
-
-.hero-text p {
-  font-size: 2rem;
-  padding-bottom: 1.5rem;
+  font-size: 2.2rem;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
 }
 
 .hero-text form .form-control {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .hero-text form .form-control input {
   font-family: inherit;
   font-size: 1.5rem;
-  width: 80%;
-  padding: 1.2rem;
+  display: block;
+  width: 38rem;
+  padding: 1rem;
   color: #fafafa;
   background: transparent;
   border: 1.5px solid #fafafa;
   border-radius: 0.75rem;
 }
 
-.hero-text form .form-control input[type="submit"],
+.hero-text form .form-control input[type='submit'],
 .feedback-text .feedback-btn {
   font-family: inherit;
   display: block;
@@ -128,25 +135,31 @@ body {
   border: 2px solid #fafafa;
   cursor: pointer;
   border-radius: 2rem;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
-  padding: 1rem;
+  padding: 0.85rem;
   transition: all 300ms ease-in-out;
 }
 
-.hero-text form .form-control input[type="submit"]:hover,
+.hero-text form .form-control input[type='submit']:hover,
 .feedback-text .feedback-btn:hover {
-  color: #9900ff;
+  color: #7d00fa;
   background: #fafafa;
   border: 2px solid #fafafa;
 }
 
+.feedback-text {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
 .hero-text form .form-control input:focus {
-  outline-color: #9900ff;
+  outline: #fafafa;
 }
 
 .hero-text form .form-control input::placeholder {
   color: #fafafa;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
@@ -154,10 +167,11 @@ body {
   width: 50%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .hero-section .hero-flex .hero-image > img {
-  width: 75%;
+  width: 60%;
   filter: drop-shadow(8px 5px 25px rgba(255, 255, 255, 0.7));
   filter: drop-shadow(15px 8px 25px #333);
   vertical-align: middle;
@@ -170,21 +184,21 @@ body {
 
 /* Back-To-Linkbase */
 .linkbase-section {
-  padding: 2.5rem 0rem;
+  margin: 1.5rem 0rem 2.5rem;
 }
 
 .linkbase-section .linkbase-btn {
   font-family: inherit;
   display: block;
-  width: 25%;
-  color: #9900ff;
+  width: 22rem;
+  color: #7d00fa;
   background: #fafafa;
   border: 2px solid #fafafa;
   cursor: pointer;
   border-radius: 2rem;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
-  padding: 1.2rem;
+  padding: 1rem;
   text-align: center;
   text-decoration: none;
   margin: 0 auto;
@@ -201,31 +215,17 @@ body {
   border: 2px solid #fafafa;
 }
 
-/* Animation */
-
-.drop-in {
-  animation: drop-in 0.8s ease 200ms backwards;
+#user-name{
+  display:inline;
 }
-
-.drop-in-2 {
-  animation: drop-in 1500ms ease 500ms backwards;
-}
-
-@keyframes drop-in {
-  from {
-    opacity: 0;
-    transform: translateY(-100px);
-  }
-  to {
-    opacity: 1;
-    transform: translate(0px);
-  }
+#list-name{
+  display:inline;
 }
 
 /* Media Queries */
 @media (max-width: 1100px) {
   .hero-section .hero-flex .hero-image > img {
-    width: 80%;
+    width: 70%;
   }
 }
 
@@ -236,61 +236,78 @@ body {
   }
 
   .hero-section .hero-flex .hero-image > img {
-    width: 100%;
+    width: 80%;
   }
 
   .hero-section .hero-flex .hero-text {
     width: 80%;
     order: 2;
   }
-
-  .hero-text form .form-control input {
-    width: 100%;
-  }
-
-  .linkbase-section .linkbase-btn {
-    width: 100%;
-  }
 }
 
 @media (max-width: 800px) {
-  .hero-section h1 {
-    font-size: 5rem;
-    width: 100%;
-    line-height: 6rem;
-  }
-
   .hero-section .hero-flex .hero-text {
     width: 100%;
     order: 2;
   }
 }
 
+@media (max-width: 650px) {
+  .hero-section .hero-flex .hero-image > img {
+    width: 95%;
+  }
+}
+
 @media (max-width: 500px) {
   .hero-section .hero-flex {
     padding-top: 2rem;
-    gap: 2rem;
+    gap: 3.5rem;
   }
 
-  .hero-section h1 {
-    font-size: 3.5rem;
-    line-height: 5.2rem;
-  }
   .hero-section .hero-flex .hero-image {
     width: 60%;
   }
 
   .hero-text h3 {
-    font-size: 2.4rem;
-    line-height: 3.4rem;
+    text-align: center;
   }
 
   .hero-text form .form-control input {
-    width: 100%;
+    display: block;
+    width: 33rem;
+    margin: 0 auto;
   }
 
-  .hero-text p {
-    font-size: 1.8rem;
-    line-height: 1.35;
+  .hero-text h4 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .back-button {
+    display: none;
+  }
+
+  .header {
+    padding: 1rem 0rem;
+  }
+
+  .hero-section h2 {
+    font-size: 2.4rem;
+  }
+
+  .hero-text form .form-control input[type='submit'],
+  .feedback-text .feedback-btn {
+    width: 16rem;
+    font-size: 1.5rem;
+    margin: 0 auto;
+  }
+
+  .linkbase-section {
+    padding: 3.5rem 0rem 1.5rem;
+  }
+
+  .hero-text form .form-control input::placeholder {
+    text-align: center;
   }
 }

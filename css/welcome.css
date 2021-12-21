@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+@font-face {
+  font-family: 'Agency FB';
+  src: url('../fonts/Agency-FB.ttf');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.35;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+/* ----------Welcome Page---------- */
+.purple-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* height: calc(100vh - 5.2rem); */
+
+  background: linear-gradient(
+    100deg,
+    rgba(163, 44, 196, 1) 12%,
+    rgba(153, 0, 255, 1) 56.00000000000001%
+  );
+}
+
+/* Header-Section */
+
+.header {
+  padding: 2rem 0rem;
+}
+
+.header .header-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header .brand-logo > img {
+  display: block;
+  width: 4rem;
+}
+
+.header .brand-name {
+  font-family: 'Agency FB', sans-serif;
+  font-size: 4rem;
+  letter-spacing: 0.65rem;
+  font-weight: normal;
+  color: #fafafa;
+}
+
+.heading-content {
+  text-align: center;
+}
+
+.heading-content h2 {
+  font-family: 'Agency FB', sans-serif;
+  font-size: 6.5rem;
+  font-weight: normal;
+  text-transform: capitalize;
+  color: #fafafa;
+}
+
+.heading-content p {
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: #fafafa;
+}
+
+/* Navigating Arrows */
+
+.arrow-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.linkbase-navigation-right {
+  width: 25rem;
+  position: absolute;
+  bottom: 0;
+  right: 2rem;
+}
+
+.linkbase-navigation {
+  width: 32rem;
+  position: absolute;
+  bottom: 0;
+  left: 2rem;
+}
+
+.linkbase-navigation p,
+.linkbase-navigation-right p {
+  font-family: 'Agency FB', sans-serif;
+  font-size: 2.7rem;
+  font-weight: normal;
+  text-align: center;
+  color: #fafafa;
+}
+
+svg {
+  height: 8rem;
+  padding-bottom: 0.85rem;
+}
+
+.arrow-rotate {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.arrow-rotate svg {
+  transform: rotateY(180deg);
+}
+
+.arrow-flex {
+  display: flex;
+}
+
+svg .draw-arrow {
+  stroke-width: 3;
+  stroke: #fafafa;
+  fill: none;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: draw;
+  animation-name: draw;
+  animation-iteration-count: infinite;
+}
+svg .draw-arrow.tail-1 {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+svg .draw-arrow.tail-2 {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+@-webkit-keyframes draw {
+  to {
+    stroke-dashoffset: -400;
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: -400;
+  }
+}
+
+/* ----------Media Queries---------- */
+@media (max-width: 650px) {
+  .linkbase-navigation {
+    width: 20rem;
+  }
+
+  .linkbase-navigation-right {
+    width: 18rem;
+  }
+
+  .linkbase-navigation p,
+  .linkbase-navigation-right p {
+    font-size: 2.3rem;
+  }
+
+  .heading-content h2 {
+    font-size: 5.2rem;
+  }
+
+  .heading-content p {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 470px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .header {
+    padding: 1.5rem 0rem;
+  }
+
+  .linkbase-navigation {
+    width: 15.5rem;
+    left: 1.5rem;
+  }
+
+  .linkbase-navigation-right {
+    width: 13rem;
+    right: 1.5rem;
+  }
+
+  .linkbase-navigation p,
+  .linkbase-navigation-right p {
+    font-size: 2rem;
+  }
+
+  .heading-content h2 {
+    font-size: 4rem;
+  }
+
+  .heading-content p {
+    font-size: 1.6rem;
+  }
+}

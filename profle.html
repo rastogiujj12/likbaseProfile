@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="./images/logo.png"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <script
+      src="https://kit.fontawesome.com/6255250c8f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>LINKBASE</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header-content">
+          <div class="brand-logo">
+            <img src="./images/logo.png" alt="weiB" />
+          </div>
+          <div class="brand-name">LINKBASE</div>
+        </div>
+      </header>
+
+      <section class="hero-section">
+        <h2>Your Personal Journey Inside The Vast Web Universe</h2>
+        <div class="hero-flex">
+          <div class="hero-text">
+            <div class="linkbase-points">
+              <h4 class="journey-heading">
+                This journey was specially charted by <span id="user-name">[user]</span> to showcase
+                <span id="list-name">[topic/title]</span>.
+              </h4>
+              <h4>Connect and wrap amazing content in just one link.</h4>
+              <h4>
+                With Linkbase you can build a journey made of different websites
+                related to your community and interests. Then you just wrap all
+                of them into a single ready-to-share link.
+              </h4>
+              <h4>
+                When someone clicks it, they will access your tailored journey
+                of curated content, just like you designed it.
+              </h4>
+              <h4>
+                Start wrapping the best content across the internet in a single
+                Journey and share it now!
+              </h4>
+            </div>
+
+            <div class="feedback-text">
+              <h3>Let us know what you think</h3>
+              <a
+                href="https://forms.gle/VmEYGPBtffGMC3Ub8"
+                target="_blank"
+                class="feedback-btn"
+                id="feedback"
+                >Send Feedback</a
+              >
+            </div>
+
+            <h3>Stay in touch</h3>
+            <form
+              method="post"
+              autocomplete="off"
+              name="submit-to-google-sheet"
+            >
+              <div class="form-control">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Enter your email address"
+                />
+              </div>
+
+              <div class="form-control">
+                <input type="submit" value="Connect" />
+              </div>
+            </form>
+          </div>
+          <div class="hero-image">
+            <img src="./images/Linkbase pure.png" alt="Placeholder Phone" />
+          </div>
+        </div>
+      </section>
+
+      <section class="linkbase-section">
+        <button onclick="goBack()" class="linkbase-btn">
+          Back to Linkbase
+        </button>
+      </section>
+    </div>
+    <script>
+      function getParameterByName(name, url = window.location.href) {
+          name = name.replace(/[\[\]]/g, '\\$&');
+          var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+              results = regex.exec(url);
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, ' '));
+      }
+      document.getElementById("user-name").innerHTML = getParameterByName("user");
+      document.getElementById("list-name").innerHTML = getParameterByName("list")
+    </script>
+    <script>
+      const scriptURL =
+        'https://script.google.com/macros/s/AKfycbxATUiWsaUNk8J-R0qwbvQFZQ7Bp4JtwTirohDWPdD7MWq0sQXGEcXSiRQ04n3g4KLK/exec';
+      const form = document.forms['submit-to-google-sheet'];
+
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then(response =>
+            Swal.fire({
+              position: 'center',
+              icon: 'success',
+              title: 'Congrats! You’re now a part of Linkbase',
+              showConfirmButton: false,
+              timer: 6000,
+              width: '60rem',
+              color: '#7d00fa',
+              padding: '1.5rem',
+            })
+          )
+          .catch(error => console.error('Error!', error.message));
+      });
+    </script>
+
+    <script>
+      document.getElementById('feedback').addEventListener('click', e => {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Thanks for your feedback!]',
+          showConfirmButton: false,
+          timer: 6000,
+          width: '60rem',
+          color: '#7d00fa',
+          padding: '1.5rem',
+        });
+      });
+    </script>
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+  </body>
+</html>
