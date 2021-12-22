@@ -60,7 +60,6 @@
                 href="https://forms.gle/VmEYGPBtffGMC3Ub8"
                 target="_blank"
                 class="feedback-btn"
-                id="feedback"
                 >Send Feedback</a
               >
             </div>
@@ -77,6 +76,7 @@
                   name="email"
                   id="email"
                   placeholder="Enter your email address"
+                  required
                 />
               </div>
 
@@ -133,20 +133,6 @@
       });
     </script>
 
-    <script>
-      document.getElementById('feedback').addEventListener('click', e => {
-        Swal.fire({
-          position: 'center',
-          icon: 'success',
-          title: 'Thanks for your feedback!]',
-          showConfirmButton: false,
-          timer: 6000,
-          width: '60rem',
-          color: '#7d00fa',
-          padding: '1.5rem',
-        });
-      });
-    </script>
     <script>
       function goBack() {
         window.history.back();

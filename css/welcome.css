@@ -84,6 +84,7 @@ body {
 
 .heading-content p {
   font-size: 1.8rem;
+  padding-bottom: 0.75rem;
   font-weight: normal;
   color: #fafafa;
 }
@@ -98,14 +99,14 @@ body {
 .linkbase-navigation-right {
   width: 25rem;
   position: absolute;
-  bottom: 0;
+  bottom: 0.5rem;
   right: 2rem;
 }
 
 .linkbase-navigation {
   width: 32rem;
   position: absolute;
-  bottom: 0;
+  bottom: 0.5rem;
   left: 2rem;
 }
 
@@ -175,10 +176,12 @@ svg .draw-arrow.tail-2 {
 @media (max-width: 650px) {
   .linkbase-navigation {
     width: 20rem;
+    bottom: 1.2rem;
   }
 
   .linkbase-navigation-right {
     width: 18rem;
+    bottom: 1.2rem;
   }
 
   .linkbase-navigation p,
